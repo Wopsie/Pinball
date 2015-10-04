@@ -3,17 +3,14 @@ using System.Collections;
 
 public class Obstacle : MonoBehaviour 
 {
-
-	void FixedUpdate () 
-    {
-        
-	}
+    public static int objScore;
 
     void OnCollisionStay(Collision col)
     {
         if(col.gameObject.tag == "Ball")
         {
             ScaleBumperUp();
+            
         }
     }
 
@@ -22,6 +19,7 @@ public class Obstacle : MonoBehaviour
         if(col.gameObject.tag == "Ball")
         {
             ScaleBumperDown();
+            objScore =+100;
         }
     }
 

@@ -6,13 +6,18 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
     private Text scoreText;
-    private int score;
+    private static int score;
 
+    void Start()
+    {
+        GameObject theObstacle = GameObject.Find("Bumper");
+        
+    }
 
 	void Update () 
     {
         scoreText.text = "Score: " + score;
-        score++;
+        score = Obstacle.objScore;
         //if collision with 
 	}
 }
