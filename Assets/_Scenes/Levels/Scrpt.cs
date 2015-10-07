@@ -18,8 +18,7 @@ public class Scrpt : MonoBehaviour {
 
 
 
-        if (this.leftB)
-        {
+  
             if (Input.GetKeyDown(KeyCode.A))
             {
                 this.GetComponent<Rigidbody>().AddForce(transform.forward * forceSpeed, ForceMode.Impulse);
@@ -28,6 +27,6 @@ public class Scrpt : MonoBehaviour {
             else {
                 this.GetComponent<Rigidbody>().AddForce((transform.forward * forceSpeed) * -1, ForceMode.Impulse);
             }
-        }
+        
 	}
 }

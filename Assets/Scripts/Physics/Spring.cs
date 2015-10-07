@@ -5,11 +5,12 @@ public class Spring : MonoBehaviour {
 
     //floats
     private float scale = 5f;
-    private float thrust = 50f;
+    public float thrust = 0f; //Let the trigger set your thrust to zero!
     //floats
 
     //bools
     private bool startSpring = false;
+    public bool onSpring; //Let the trigger know that the ball can't addForce anymore!
     //bools
 
     //gameobjects
@@ -25,34 +26,46 @@ public class Spring : MonoBehaviour {
 	}
 	
 
-	void Update () {
-
+	void Update () 
+    {
+        Debug.Log(thrust);
         SpringPower();
+        ScaleSpring();
+	} 
 
-	if (Input.GetKey(KeyCode.Space))
+    void ScaleSpring()
     {
-        if (scale >= 1)
+        if (Input.GetKey(KeyCode.Space))
         {
-            scale -= 0.03f;
-            this.transform.localScale = new Vector3(1, scale, 1);
+            if (scale >= 1)
+            {
+                if (thrust <= Mathf.Abs(50))
+                {
+                    thrust++;
+                }
+                   
+                scale -= 0.03f;
+                this.transform.localScale = new Vector3(1, scale, 1);
+            }
+        }
+        else
+        {
+            if (scale <= 5)
+            {
+                
+                scale += 0.4f;
+                this.transform.localScale = new Vector3(1, scale, 1);
+            }
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if(onSpring)
+            startSpring = true;
+
         }
     }
-    else
-    {
-        startSpring = false;
-         if (scale <= 5)
-        {
-            scale += 0.4f;
-            this.transform.localScale = new Vector3(1, scale, 1);
-        }
-
-    }
-    if (Input.GetKeyUp(KeyCode.Space))
-    {
-        startSpring = true;
-    }
-
-	} //END OF THE UPDATE
 
     void SpringPower()
     {
@@ -67,8 +80,7 @@ public class Spring : MonoBehaviour {
     {
         if (coll.gameObject.name == "Ball")
         {
-            Debug.Log("Test");
-           // startSpring = true;
+            onSpring = true;
         }
     }
 }
