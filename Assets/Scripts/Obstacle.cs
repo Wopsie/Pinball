@@ -15,11 +15,11 @@ public class Obstacle : MonoBehaviour
     {
         if(pointTime <= 30)
         {
-            Debug.Log("cannot earn score");
+            //Debug.Log("cannot earn score");
         }
         else
         {
-            Debug.Log("can earn score");
+            //Debug.Log("can earn score");
         }
     }
 
