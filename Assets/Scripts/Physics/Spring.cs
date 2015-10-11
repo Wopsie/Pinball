@@ -15,20 +15,19 @@ public class Spring : MonoBehaviour {
 
     //gameobjects
     private GameObject ball;
-    private GameObject stopSpring;
+    private GameObject[] balls;
     //gameobjects
 
 
 	void Awake () 
     {
-        ball = GameObject.Find("Ball");
-        stopSpring = GameObject.Find("StopSpring");
+        ball = GameObject.FindGameObjectWithTag("Ball");
+        balls = GameObject.FindGameObjectsWithTag("Ball");
 	}
 	
 
 	void Update () 
     {
-        Debug.Log(thrust);
         SpringPower();
         ScaleSpring();
 	} 
@@ -39,12 +38,12 @@ public class Spring : MonoBehaviour {
         {
             if (scale >= 1)
             {
-                if (thrust <= Mathf.Abs(50))
+                if (thrust <= Mathf.Abs(100))
                 {
-                    thrust++;
+                    thrust+= 1.5f;
                 }
                    
-                scale -= 0.03f;
+                scale -= 0.075f;
                 this.transform.localScale = new Vector3(1, scale, 1);
             }
         }
@@ -71,14 +70,18 @@ public class Spring : MonoBehaviour {
     {
         if (startSpring == true)
         {
-            ball.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);
+            foreach (GameObject ball in balls)
+            {
+                ball.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);
+            }
+            
             startSpring = false;
         }
     }
 
     void OnCollisionEnter (Collision coll)
     {
-        if (coll.gameObject.name == "Ball")
+        if (coll.gameObject.tag == "Ball")
         {
             onSpring = true;
         }
