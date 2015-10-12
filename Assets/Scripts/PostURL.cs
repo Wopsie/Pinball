@@ -21,10 +21,10 @@ public class PostURL : MonoBehaviour
     void ParseString(string IncText)
     {
         Debug.Log(IncText.Trim().Split('\n'));
-        foreach(IncText.Trim)
+        /*foreach(IncText.Trim);
         {
             
-        }
+        }*/
     }
 
     IEnumerator WaitForRequest(WWW www)
