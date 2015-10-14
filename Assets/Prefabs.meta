@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 552f1278f01e6184fae79549bfbd82ab
 folderAsset: yes
 timeCreated: 1444567988
+=======
+guid: a2bcbf2e75520464db5e51df30884369
+folderAsset: yes
+timeCreated: 1444115207
+>>>>>>> scoreshit
 licenseType: Free
 DefaultImporter:
   userData: 
