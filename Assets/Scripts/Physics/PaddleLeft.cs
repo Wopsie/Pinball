@@ -8,7 +8,6 @@ public class PaddleLeft : MonoBehaviour {
 
 	public float targetVel = 400;
 	public float power = 3000;
-	public string inputKeyName = "left";
 
 	// Use this for initialization
 	void Start () {
@@ -23,8 +22,8 @@ public class PaddleLeft : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if (Input.GetKey (inputKeyName)) {
-			//Debug.Log ("Space Was Pressed");
+	if (Input.GetKey (KeyCode.A)) {
+
 			motor.force = power;
 			motor.targetVelocity = targetVel;
 			motor.freeSpin = false;
@@ -41,4 +40,6 @@ public class PaddleLeft : MonoBehaviour {
 				}
 
 	}
+
+    
 }

@@ -15,14 +15,12 @@ public class Spring : MonoBehaviour {
 
     //gameobjects
     private GameObject ball;
-    private GameObject[] balls;
     //gameobjects
 
 
 	void Awake () 
     {
         ball = GameObject.FindGameObjectWithTag("Ball");
-        balls = GameObject.FindGameObjectsWithTag("Ball");
 	}
 	
 
@@ -70,11 +68,8 @@ public class Spring : MonoBehaviour {
     {
         if (startSpring == true)
         {
-            foreach (GameObject ball in balls)
-            {
-                ball.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);
-            }
-            
+            ball = GameObject.FindGameObjectWithTag("Ball");
+            ball.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);       
             startSpring = false;
         }
     }
