@@ -14,12 +14,9 @@ public class Paddles : MonoBehaviour {
     {
         leftFlipper = GameObject.Find("LeftFlipper");
     }
-	// Use this for initialization
-	void Start () {
-	}
 	
-	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
         if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log(leftFlipper.activeSelf);
