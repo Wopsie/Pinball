@@ -6,9 +6,8 @@ using System.Collections;
 public class DeathTrigger : MonoBehaviour {
 
     //GameObjects
-    private GameObject ballObject;
-    private GameObject ballObjectClone;
     [SerializeField]
+    private GameObject ballObjectClone;
     private GameObject spawnPos;
     //GameObjects
 
@@ -16,20 +15,15 @@ public class DeathTrigger : MonoBehaviour {
     private int deathCounter;
     //int
 
-	void Start () 
-    {
-        ballObject = GameObject.FindGameObjectWithTag("Ball");
-        ballObjectClone = Instantiate(ballObject);
-	}
 
     void Update()
     {
-        Debug.Log(deathCounter);
         Death();
     }
 
     void Death()
     {
+       
         if (deathCounter >= 3)
         {
             // Einde verhaal
@@ -49,6 +43,7 @@ public class DeathTrigger : MonoBehaviour {
 
     IEnumerator WaitForSecondBall()
     {
+        spawnPos = GameObject.Find("Reset");
         yield return new WaitForSeconds(2);
         Instantiate(ballObjectClone, spawnPos.transform.position, Quaternion.identity);
     }

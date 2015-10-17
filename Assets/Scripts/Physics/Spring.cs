@@ -15,14 +15,21 @@ public class Spring : MonoBehaviour {
 
     //gameobjects
     private GameObject ball;
+<<<<<<< HEAD
     private GameObject stopSpring;
+=======
+>>>>>>> origin/master
     //gameobjects
 
 
 	void Awake () 
     {
+<<<<<<< HEAD
         ball = GameObject.Find("Ball");
         stopSpring = GameObject.Find("StopSpring");
+=======
+        ball = GameObject.FindGameObjectWithTag("Ball");
+>>>>>>> origin/master
 	}
 	
 
@@ -71,7 +78,12 @@ public class Spring : MonoBehaviour {
     {
         if (startSpring == true)
         {
+<<<<<<< HEAD
             ball.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);
+=======
+            ball = GameObject.FindGameObjectWithTag("Ball");
+            ball.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);       
+>>>>>>> origin/master
             startSpring = false;
         }
     }
