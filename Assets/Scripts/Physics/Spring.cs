@@ -18,19 +18,35 @@ public class Spring : MonoBehaviour {
 
     //gameobjects
     private GameObject ball;
+<<<<<<< HEAD
     private GameObject springModel;
+=======
+<<<<<<< HEAD
+    private GameObject stopSpring;
+=======
+>>>>>>> origin/master
+>>>>>>> 72fd1ad43bb648d38db8226eac94b133503e4d37
     //gameobjects
 
 
 	void Awake () 
     {
+<<<<<<< HEAD
+        ball = GameObject.Find("Ball");
+        stopSpring = GameObject.Find("StopSpring");
+=======
         ball = GameObject.FindGameObjectWithTag("Ball");
+<<<<<<< HEAD
         springModel = GameObject.Find("SpringModel");
+=======
+>>>>>>> origin/master
+>>>>>>> 72fd1ad43bb648d38db8226eac94b133503e4d37
 	}
 	
 
 	void Update () 
     {
+        Debug.Log(thrust);
         SpringPower();
         ScaleSpring();
 	} 
@@ -41,12 +57,12 @@ public class Spring : MonoBehaviour {
         {
             if (scale >= 1)
             {
-                if (thrust <= Mathf.Abs(100))
+                if (thrust <= Mathf.Abs(50))
                 {
-                    thrust+= 1.5f;
+                    thrust++;
                 }
                    
-                scale -= 0.075f;
+                scale -= 0.03f;
                 this.transform.localScale = new Vector3(1, scale, 1);
                 springModel.transform.localScale = new Vector3(1, 1, springScale);
 
@@ -76,15 +92,19 @@ public class Spring : MonoBehaviour {
     {
         if (startSpring == true)
         {
+<<<<<<< HEAD
+            ball.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);
+=======
             ball = GameObject.FindGameObjectWithTag("Ball");
             ball.GetComponent<Rigidbody>().AddForce(transform.up * thrust, ForceMode.Impulse);       
+>>>>>>> origin/master
             startSpring = false;
         }
     }
 
     void OnCollisionEnter (Collision coll)
     {
-        if (coll.gameObject.tag == "Ball")
+        if (coll.gameObject.name == "Ball")
         {
             onSpring = true;
         }

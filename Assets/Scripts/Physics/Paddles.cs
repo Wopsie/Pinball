@@ -26,6 +26,12 @@ public class Paddles : MonoBehaviour {
        tinyLeftFlipper = GameObject.FindGameObjectWithTag("TinyLeftFlipper");
        tinyRightFlipper = GameObject.FindGameObjectWithTag("TinyRightFlipper");
     }
+<<<<<<< HEAD
+	
+	void Update () 
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+=======
 
 
 	void Start () 
@@ -73,6 +79,7 @@ public class Paddles : MonoBehaviour {
     void MoveFlippers()
     {
         if (leftTrigger)
+>>>>>>> origin/master
         {
             if (Input.GetKey(KeyCode.A))
             {
