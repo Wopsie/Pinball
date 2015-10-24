@@ -40,7 +40,14 @@ Material:
         first:
           name: _Tex
         second:
-          m_Texture: {fileID: 8900000, guid: bbf38a6d23bda8d4a93c1b40770cbdcd, type: 3}
+          m_Texture: {fileID: 8900000, guid: dfafe45187094a84092935339ef43cd2, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMap
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -78,13 +85,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MetallicGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -104,10 +104,6 @@ Material:
         second: 1
       data:
         first:
-          name: _Parallax
-        second: .0199999996
-      data:
-        first:
           name: _ZWrite
         second: 1
       data:
@@ -116,8 +112,16 @@ Material:
         second: .5
       data:
         first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
           name: _BumpScale
         second: 1
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
       data:
         first:
           name: _OcclusionStrength
@@ -136,12 +140,8 @@ Material:
         second: 0
       data:
         first:
-          name: _Metallic
-        second: 0
-      data:
-        first:
           name: _Rotation
-        second: 296
+        second: 0
     m_Colors:
       data:
         first:

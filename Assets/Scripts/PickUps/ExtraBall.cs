@@ -17,10 +17,10 @@ public class ExtraBall : PickUp
     }
     
 
-    public override void PlayerHit(PlayerMovement _SC)
+    public override void PlayerHit()
     {
         spawnPos = GameObject.Find("Reset");
         Instantiate(ballObjectClone, spawnPos.transform.position, Quaternion.identity);
-        base.PlayerHit(_SC);
+        base.PlayerHit();
     }
 }

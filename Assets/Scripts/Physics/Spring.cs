@@ -5,22 +5,27 @@ public class Spring : MonoBehaviour {
 
     //floats
     private float scale = 5f;
+    private float springScale = 1f;
     public float thrust = 0f; //Let the trigger set your thrust to zero!
     //floats
 
     //bools
     private bool startSpring = false;
+    private bool activeSpring = false;
     public bool onSpring; //Let the trigger know that the ball can't addForce anymore!
+
     //bools
 
     //gameobjects
     private GameObject ball;
+    private GameObject springModel;
     //gameobjects
 
 
 	void Awake () 
     {
         ball = GameObject.FindGameObjectWithTag("Ball");
+        springModel = GameObject.Find("SpringModel");
 	}
 	
 
@@ -43,6 +48,8 @@ public class Spring : MonoBehaviour {
                    
                 scale -= 0.075f;
                 this.transform.localScale = new Vector3(1, scale, 1);
+                springModel.transform.localScale = new Vector3(1, 1, springScale);
+
             }
         }
         else
@@ -52,6 +59,7 @@ public class Spring : MonoBehaviour {
                 
                 scale += 0.4f;
                 this.transform.localScale = new Vector3(1, scale, 1);
+                springModel.transform.localScale = new Vector3(1, 1, springScale);
             }
 
         }

@@ -12,7 +12,7 @@ public class DeathTrigger : MonoBehaviour {
     //GameObjects
 
     //int
-    private int deathCounter;
+    public int deathCounter;
     //int
 
 
@@ -26,7 +26,7 @@ public class DeathTrigger : MonoBehaviour {
        
         if (deathCounter >= 3)
         {
-            // Einde verhaal
+            Debug.Log("DEAD");
         }
     }
 
@@ -36,6 +36,8 @@ public class DeathTrigger : MonoBehaviour {
         {
             deathCounter++;
             Destroy(other.gameObject);
+
+            if (deathCounter <= 2)
             StartCoroutine("WaitForSecondBall");
             
         }

@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bumper
   - Ball
+  - Spawn
+  - LeftFlipper
+  - RightFlipper
+  - FollowCamera
+  - TinyLeftFlipper
+  - TinyRightFlipper
   layers:
   - Default
   - TransparentFX
@@ -15,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Flippers
+  - Ball
   - 
   - 
   - 
