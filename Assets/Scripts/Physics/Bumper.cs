@@ -2,15 +2,12 @@
 using System.Collections;
 
 public class Bumper : MonoBehaviour {
-
-
-    //Floats
+    [SerializeField]
+    private AudioSource bumperHit;
     [SerializeField]
     private float powerBump = 80f;
     [SerializeField]
     private float sizeScale = 0.10f;
-    //Floats
-
 
     void OnCollisionStay(Collision col)
     {
@@ -25,6 +22,7 @@ public class Bumper : MonoBehaviour {
         if(col.gameObject.tag == "Ball")
         {
             ScaleBumperDown();
+            bumperHit.Play();
         }
     }
 
@@ -40,5 +38,4 @@ public class Bumper : MonoBehaviour {
     {
         transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
     }
-
 }
