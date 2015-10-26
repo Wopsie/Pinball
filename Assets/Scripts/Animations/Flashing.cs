@@ -3,13 +3,20 @@ using System.Collections;
 
 public class Flashing : MonoBehaviour {
 
+    //Light
     private Light stormLight;
-    
+    //Light
+
     //floats
     private float timer = 5f;
     private float randomTimer;
     //floats
 
+
+    //Audio
+    [SerializeField]
+    private AudioSource thunderSFX;
+    //Audio
 	void Start () 
     {
         stormLight = GetComponent<Light>();
@@ -28,6 +35,7 @@ public class Flashing : MonoBehaviour {
         {
             randomTimer = Random.Range(5f, 20f);
             StartCoroutine("RandomFlash");
+            thunderSFX.Play();
             timer = randomTimer;
         }
 

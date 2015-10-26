@@ -135,8 +135,4 @@ Material:
       data:
         first:
           name: _Color
-<<<<<<< HEAD
         second: {r: 1, g: 0, b: 1, a: 1}
-=======
-        second: {r: 0, g: 0, b: 0, a: 1}
->>>>>>> 72fd1ad43bb648d38db8226eac94b133503e4d37
