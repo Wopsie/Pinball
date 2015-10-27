@@ -26,6 +26,7 @@ public class DeathTrigger : MonoBehaviour {
        
         if (deathCounter >= 3)
         {
+			Application.LoadLevel(1);
             Debug.Log("DEAD");
         }
     }
