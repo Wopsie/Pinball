@@ -16,6 +16,7 @@ TagManager:
   - FarLine
   - CloseLine
   - MediumLine
+  - DoorSwitch
   layers:
   - Default
   - TransparentFX

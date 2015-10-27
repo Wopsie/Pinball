@@ -630,8 +630,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: .999999881, z: .449605107}
-  m_Center: {x: 0, y: -2.67985456e-08, z: -.224802479}
+  m_Size: {x: 1, y: .999999881, z: .0208997764}
+  m_Center: {x: 0, y: -1.24572352e-09, z: -.0104498854}
 --- !u!33 &253204500
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1356,8 +1356,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 509348917}
   - 33: {fileID: 509348916}
-  - 65: {fileID: 509348915}
   - 23: {fileID: 509348914}
+  - 136: {fileID: 509348915}
   m_Layer: 0
   m_Name: ScorePillar1
   m_TagString: Untagged
@@ -1389,8 +1389,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &509348915
-BoxCollider:
+--- !u!136 &509348915
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1398,8 +1398,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: .577674866
+  m_Height: 1.53117406
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &509348916
 MeshFilter:
@@ -1499,6 +1500,7 @@ GameObject:
   - 23: {fileID: 536672827}
   - 54: {fileID: 536672826}
   - 114: {fileID: 536672831}
+  - 114: {fileID: 536672832}
   m_Layer: 9
   m_Name: Ball
   m_TagString: Ball
@@ -1588,6 +1590,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1027073857}
+--- !u!114 &536672832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536672825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352007489b9a80142a7fa718eb16d36b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &585905969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,7 +3019,6 @@ MonoBehaviour:
   bumperHit: {fileID: 633647206}
   powerBump: 80
   sizeScale: .100000001
-  objValue: 50
 --- !u!1 &651479021 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 07d0a660680071f4fa8eea00a059c107, type: 3}
@@ -4376,7 +4388,6 @@ MonoBehaviour:
   bumperHit: {fileID: 1132790524}
   powerBump: 80
   sizeScale: .100000001
-  objValue: 50
 --- !u!64 &1132790523
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4669,8 +4680,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1244552843}
   - 33: {fileID: 1244552842}
-  - 65: {fileID: 1244552841}
   - 23: {fileID: 1244552840}
+  - 136: {fileID: 1244552841}
   m_Layer: 0
   m_Name: ScorePillar2
   m_TagString: Untagged
@@ -4702,8 +4713,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &1244552841
-BoxCollider:
+--- !u!136 &1244552841
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -4711,8 +4722,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: .516727448
+  m_Height: 1.96946442
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1244552842
 MeshFilter:
@@ -4984,7 +4996,6 @@ MonoBehaviour:
   bumperHit: {fileID: 1326049801}
   powerBump: 80
   sizeScale: .100000001
-  objValue: 50
 --- !u!1 &1332065292 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 07d0a660680071f4fa8eea00a059c107, type: 3}
@@ -5463,8 +5474,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: .999999881, z: .138456091}
-  m_Center: {x: 0, y: -3.48873357e-08, z: -.0692279339}
+  m_Size: {x: 1, y: .999999881, z: .00672481535}
+  m_Center: {x: 0, y: -1.69438863e-09, z: -.00336222374}
 --- !u!33 &1530514923
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5714,8 +5725,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1608255617}
   - 33: {fileID: 1608255616}
-  - 65: {fileID: 1608255615}
   - 23: {fileID: 1608255614}
+  - 136: {fileID: 1608255615}
   m_Layer: 0
   m_Name: ScorePillar4
   m_TagString: Untagged
@@ -5747,8 +5758,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &1608255615
-BoxCollider:
+--- !u!136 &1608255615
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -5756,8 +5767,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: .578275204
+  m_Height: 1.5497942
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1608255616
 MeshFilter:
@@ -6736,8 +6748,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: .999999881, z: .470827699}
-  m_Center: {x: 1.1920929e-07, y: -2.80635106e-08, z: -.235413775}
+  m_Size: {x: 1, y: .999999881, z: .00654840842}
+  m_Center: {x: 1.1920929e-07, y: -3.90315336e-10, z: -.00327420211}
 --- !u!33 &1893018806
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7211,8 +7223,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2067222213}
   - 33: {fileID: 2067222212}
-  - 65: {fileID: 2067222211}
   - 23: {fileID: 2067222210}
+  - 136: {fileID: 2067222211}
   m_Layer: 0
   m_Name: ScorePillar3
   m_TagString: Untagged
@@ -7244,8 +7256,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &2067222211
-BoxCollider:
+--- !u!136 &2067222211
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -7253,8 +7265,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: .521152496
+  m_Height: 1.87120366
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2067222212
 MeshFilter:
