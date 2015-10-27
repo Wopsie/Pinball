@@ -8,7 +8,7 @@ public class Bumper : MonoBehaviour {
     private float powerBump = 80f;
     [SerializeField]
     private float sizeScale = 0.10f;
-<<<<<<< HEAD
+
     //Floats
 
 	//GameObjects
@@ -19,8 +19,7 @@ public class Bumper : MonoBehaviour {
 	{
 		ball = GameObject.FindGameObjectWithTag ("Ball");
 	}
-=======
->>>>>>> 3456e4d8b1400ddabc14fea9d170695774bcd9a5
+
 
     void OnCollisionStay(Collision col)
     {
