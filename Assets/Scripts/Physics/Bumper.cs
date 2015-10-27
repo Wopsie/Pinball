@@ -11,6 +11,14 @@ public class Bumper : MonoBehaviour {
     private float sizeScale = 0.10f;
     //Floats
 
+	//GameObjects
+	private GameObject ball;
+	//GameObjects
+
+	void Start () 
+	{
+		ball = GameObject.FindGameObjectWithTag ("Ball");
+	}
 
     void OnCollisionStay(Collision col)
     {
@@ -32,6 +40,7 @@ public class Bumper : MonoBehaviour {
     {
         if (transform.localScale.x <= 0.4f && transform.localScale.z <= 0.4f && transform.localScale.z <= 0.4f)
         {
+			//ball.GetComponent<Rigidbody>().AddForce(Vector3.Angle,ForceMode.Impulse);
             transform.localScale += new Vector3(sizeScale, sizeScale, sizeScale) * (Time.deltaTime * powerBump);
         }
     }

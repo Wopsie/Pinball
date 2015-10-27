@@ -23,7 +23,7 @@ public class SecretDoor : MonoBehaviour {
 
 	void Update () 
     {
-        Debug.Log(counterToOpenDoor);
+
 	    if (counterToOpenDoor <= 0)
         {
             secretDoor.SetActive(false);
