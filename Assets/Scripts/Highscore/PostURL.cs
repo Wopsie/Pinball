@@ -1,44 +1,38 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
-public class PostURL : MonoBehaviour {
-
-    private string textW;
-    [SerializeField]
-    private Text scoreField;
-    private WWW www;
-
-
-
-	void Start () {
-
-       // wwwText = www.text;
-		string url = "http://localhost/bap/pro/action_page2.php";
-
-		www = new WWW(url);
-        StartCoroutine(WaitForRequest(www));
-
-	}
-
-    void ParseString(string incText)
+public class PostURL : MonoBehaviour
+{
+    void Start()
     {
-        incText = www.text;
-        incText.Trim().Split('\n');
+        string url = "19176.hosts.ma-cloud.nl/bewijzenmap/jaar2/PRO/Pinball/andere.php";
+        WWWForm form = new WWWForm();
+        //form.AddField("Name", "Player");
+        //form.AddField("Score", "Number");
+        WWW www = new WWW(url/*, form*/);
+        StartCoroutine(WaitForRequest(www));
     }
 
-	IEnumerator WaitForRequest (WWW www)
+    void ParseString(string IncText)
+    {
+        Debug.Log(IncText.Trim().Split('\n'));
+        /*foreach(IncText.Trim);
+        {
+            
+        }*/
+    }
 
-	{
-		yield return www;
+    IEnumerator WaitForRequest(WWW www)
+    {
+        yield return www;
 
-		if(www.error == null) {
-			Debug.Log("WWW Ok!: " + www.text);
-		} else {
-			Debug.Log("WWW Error: "+ www.error);
-		}
-
-        scoreField.text = www.text;
-	}
-
+        if (www.error == null)
+        {
+            Debug.Log("WWW OK!: " + www.text);
+        }
+        else
+        {
+            Debug.Log("WWW ERROR!: " + www.error);
+        }
+    }
 }
