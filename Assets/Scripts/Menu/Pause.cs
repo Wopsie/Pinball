@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Pause : MonoBehaviour {
 
-	private bool pauseGame = false;
+	public bool pauseGame = false;
 	private bool showGUI = false;
 
 	private GameObject pauseScreen;
