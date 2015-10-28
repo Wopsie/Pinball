@@ -34,7 +34,7 @@ public class MoveLeft : MonoBehaviour {
     {
         if (other.gameObject.tag =="Ball")
         {
-            ball.GetComponent<Rigidbody>().AddForce(position * speed, ForceMode.Impulse);    
+            //ball.GetComponent<Rigidbody>().AddForce(position * speed, ForceMode.Impulse);    
         }
     }
 }

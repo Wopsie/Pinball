@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = "Score: " + score;
 	}
-
+    
     void OnCollisionExit(Collision col)
     {
         switch(col.gameObject.tag)
@@ -20,17 +20,27 @@ public class ScoreManager : MonoBehaviour
             case "Bumper":
                 score += 25;
                 break;
+            case "DoorSwitch":
+                score += 100;
+                break;
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        switch (col.gameObject.tag)
+        {
             case "FarLine":
                 score += 100;
+                Debug.Log("touched line");
                 break;
             case "MediumLine":
                 score += 50;
+                Debug.Log("touched line");
                 break;
             case "CloseLine":
                 score += 30;
-                break;
-            case "DoorSwitch":
-                score += 100;
+                Debug.Log("touched line");
                 break;
         }
     }

@@ -3,23 +3,23 @@ using System.Collections;
 
 public class PostURL : MonoBehaviour
 {
+    //string variable filled in by form called "playerName"
+    //integer variable score.
+    private string name;
+
     void Start()
     {
-        string url = "19176.hosts.ma-cloud.nl/bewijzenmap/jaar2/PRO/Pinball/andere.php";
+        string url = "http://localhost/pinballscores/";
         WWWForm form = new WWWForm();
-        //form.AddField("Name", "Player");
-        //form.AddField("Score", "Number");
-        WWW www = new WWW(url/*, form*/);
+        form.AddField("Name", name);
+        form.AddField("Score", ScoreManager.score.ToString());
+        WWW www = new WWW(url, form);
         StartCoroutine(WaitForRequest(www));
     }
 
     void ParseString(string IncText)
     {
-        Debug.Log(IncText.Trim().Split('\n'));
-        /*foreach(IncText.Trim);
-        {
-            
-        }*/
+
     }
 
     IEnumerator WaitForRequest(WWW www)

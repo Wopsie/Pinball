@@ -3,7 +3,6 @@ using System.Collections;
 
 public class SecretDoor : MonoBehaviour {
 
-
     //Int
     private int counterToOpenDoor;
     //Int
@@ -23,7 +22,7 @@ public class SecretDoor : MonoBehaviour {
 
 	void Update () 
     {
-
+        //Debug.Log(counterToOpenDoor);
 	    if (counterToOpenDoor <= 0)
         {
             secretDoor.SetActive(false);
@@ -36,9 +35,8 @@ public class SecretDoor : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Ball")
         {
-            turnLogoRed.GetComponent<Renderer>().material.color = Color.red;
-            counterToOpenDoor--;
             this.gameObject.SetActive(false);
+
         }
     }
 }

@@ -46,8 +46,8 @@ public class Spring : MonoBehaviour {
                 }
                    
                 scale -= 0.075f;
-                this.transform.localScale = new Vector3(2, scale, 1);
-                springModel.transform.localScale = new Vector3(2, 1, springScale);
+                this.transform.localScale = new Vector3(1, scale, 1);
+                springModel.transform.localScale = new Vector3(1, 1, springScale);
 
             }
         }

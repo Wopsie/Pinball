@@ -7,7 +7,7 @@ public class Bumper : MonoBehaviour {
     [SerializeField]
     private float powerBump = 80f;
     [SerializeField]
-    private float sizeScale = 0.10f;
+    private float sizeScale = 0.20f;
 
     //Floats
 
@@ -49,6 +49,6 @@ public class Bumper : MonoBehaviour {
 
     void ScaleBumperDown()
     {
-        transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
     }
 }
