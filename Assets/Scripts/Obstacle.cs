@@ -11,18 +11,6 @@ public class Obstacle : MonoBehaviour
 
     public int objValue = 50;
 
-    void Update()
-    {
-        if(pointTime <= 30)
-        {
-            //Debug.Log("cannot earn score");
-        }
-        else
-        {
-            //Debug.Log("can earn score");
-        }
-    }
-
     void OnCollisionStay(Collision col)
     {
         if(col.gameObject.tag == "Ball")
@@ -36,15 +24,6 @@ public class Obstacle : MonoBehaviour
         if(col.gameObject.tag == "Ball")
         {
             ScaleBumperDown();
-            if(pointTime <= 30)
-            {
-                ScoreManager.score += objValue;
-                pointTime = 0;
-            }
-            else
-            {
-                pointTime++;
-            }
             bumperHit.Play();
         }
     }
