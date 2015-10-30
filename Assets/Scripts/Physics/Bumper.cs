@@ -10,6 +10,8 @@ public class Bumper : MonoBehaviour {
     [SerializeField]
     private float sizeScale = 0.10f;
     //Floats
+    [SerializeField]
+    private AudioSource bumperSound;
 
 
     void OnCollisionStay(Collision col)
@@ -17,6 +19,7 @@ public class Bumper : MonoBehaviour {
         if(col.gameObject.tag == "Ball")
         {
             ScaleBumperUp();
+            bumperSound.Play();
         }
     }
 

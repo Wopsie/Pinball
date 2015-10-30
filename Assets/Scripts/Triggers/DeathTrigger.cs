@@ -16,6 +16,10 @@ public class DeathTrigger : MonoBehaviour {
     public int deathCounter;
     //int
 
+    //sound
+    [SerializeField]
+    private AudioSource deathSound;
+
 
     void Update()
     {
@@ -53,6 +57,7 @@ public class DeathTrigger : MonoBehaviour {
         {
             deathCounter++;
             Destroy(other.gameObject);
+            deathSound.Play();
         }
     }
 
