@@ -15,6 +15,7 @@ public class CameraSwitch : MonoBehaviour {
     private bool firstCameraSwitch;
     private bool secretCamSwitchBool;
     private bool secretCamSwitchBoolTwo;
+    private bool turnSecretOff;
     //Bool
 
 
@@ -48,6 +49,11 @@ public class CameraSwitch : MonoBehaviour {
         {
             secretCamSwitchBoolTwo = true;
         }
+
+        if (this.gameObject.name == "toReset")
+        {
+            turnSecretOff = true;
+        }
 	}
 	
 
@@ -72,7 +78,16 @@ public class CameraSwitch : MonoBehaviour {
                 secretCameraOne.SetActive(false);
                 secretCameraTwo.SetActive(true);
             }
-            
+
+            if (turnSecretOff)
+            {
+                secretCameraTwo.SetActive(false);
+            }
+
+            if (this.gameObject.name == "OpenDoor3")
+            {
+                mainCamera.SetActive(true);
+            }
         }
     }
 }

@@ -53,7 +53,13 @@ public class KinematicChanger : MonoBehaviour {
         {
             StartCoroutine("KinematicChange");
             other.GetComponent<Rigidbody>().isKinematic = true;
-        }         
+        }
+
+        else if (other.gameObject.tag == "MultiBall")
+        {
+            StartCoroutine("KinematicChange");
+            other.GetComponent<Rigidbody>().isKinematic = true;
+        }    
     }
 
     void OnTriggerExit(Collider other)

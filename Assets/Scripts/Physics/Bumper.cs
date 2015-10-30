@@ -12,6 +12,15 @@ public class Bumper : MonoBehaviour {
     //Floats
 
 
+    //GameObject
+    private GameObject bumperSFX;
+    //GameObject
+
+    void Start()
+    {
+        bumperSFX = GameObject.Find("bumperSFX");
+    }
+
     void OnCollisionStay(Collision col)
     {
         if(col.gameObject.tag == "Ball")
@@ -24,6 +33,7 @@ public class Bumper : MonoBehaviour {
     {
         if(col.gameObject.tag == "Ball")
         {
+            bumperSFX.GetComponent<AudioSource>().Play();
             ScaleBumperDown();
         }
     }

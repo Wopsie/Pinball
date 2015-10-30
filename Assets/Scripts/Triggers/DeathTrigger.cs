@@ -10,12 +10,17 @@ public class DeathTrigger : MonoBehaviour {
     private GameObject ballObjectClone;
     private GameObject multiBall;
     private GameObject spawnPos;
+    private GameObject deathSFX;
     //GameObjects
 
     //int
     public int deathCounter;
     //int
 
+    void Start()
+    {
+        deathSFX = GameObject.Find("LosingHorn");
+    }
 
     void Update()
     {
@@ -28,11 +33,9 @@ public class DeathTrigger : MonoBehaviour {
         if (deathCounter >= 3)
         {
             multiBall = GameObject.FindGameObjectWithTag("MultiBall");
-
-            if (!multiBall.activeInHierarchy)
-            {
+            deathSFX.GetComponent<AudioSource>().Play();
                 Application.LoadLevel(1);
-            }
+            
 			
         }
     }

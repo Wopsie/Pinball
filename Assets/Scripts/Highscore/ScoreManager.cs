@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour 
 {
     //GameObjects
-    [SerializeField]
     private GameObject scoreText;
     //GameObjects
 
