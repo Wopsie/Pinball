@@ -18,6 +18,19 @@ public class PostURL : MonoBehaviour
     private string _score = "";
     private string urlString;
 
+
+    /*
+    IEnumerator Update()
+    {
+        WWW postName = new WWW(urlString);
+
+        yield return postName;
+
+        Debug.Log(postName.text);
+        scoreBoardText.text = postName.text;
+    }*/
+
+
     void OnGUI()
     {
         GUI.Label(new Rect(400, 500, 50, 25), "Name");
@@ -33,6 +46,8 @@ public class PostURL : MonoBehaviour
         }
     }
 
+    
+
     private IEnumerator SaveName()
     {
         string urlString = url + "?name=" + WWW.EscapeURL(_player) + "&score=" + WWW.EscapeURL(_score);
@@ -44,4 +59,6 @@ public class PostURL : MonoBehaviour
         Debug.Log(postName.text);
         scoreBoardText.text = postName.text;
     }
+
+    
 }

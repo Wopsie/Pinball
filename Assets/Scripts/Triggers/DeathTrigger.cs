@@ -17,10 +17,17 @@ public class DeathTrigger : MonoBehaviour {
     public int deathCounter;
     //int
 
+<<<<<<< HEAD
     void Start()
     {
         deathSFX = GameObject.Find("LosingHorn");
     }
+=======
+    //sound
+    [SerializeField]
+    private AudioSource deathSound;
+
+>>>>>>> 9c959bf89f3082551dba75f108695a49982781ef
 
     void Update()
     {
@@ -56,6 +63,7 @@ public class DeathTrigger : MonoBehaviour {
         {
             deathCounter++;
             Destroy(other.gameObject);
+            deathSound.Play();
         }
     }
 
