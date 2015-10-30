@@ -76,7 +76,7 @@ public class Paddles : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.A))
             {
-                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 600, ForceMode.Impulse);
+                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 3000, ForceMode.Impulse);
             }
             else
             {
@@ -88,7 +88,7 @@ public class Paddles : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.D))
             {
-                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 600, ForceMode.Impulse);
+                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 3000, ForceMode.Impulse);
             }
             else
             {
@@ -103,7 +103,7 @@ public class Paddles : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.A))
             {
-                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 600, ForceMode.Impulse);
+                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 1000, ForceMode.Impulse);
             }
             else
             {
@@ -115,7 +115,7 @@ public class Paddles : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.D))
             {
-                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 500, ForceMode.Impulse);
+                this.GetComponent<Rigidbody>().AddForce(Vector3.back * 1000, ForceMode.Impulse);
             }
             else
             {

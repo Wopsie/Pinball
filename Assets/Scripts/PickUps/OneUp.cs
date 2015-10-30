@@ -13,11 +13,21 @@ public class OneUp : PickUp
     private DeathTrigger deathScript;
     //scripts
 
+    //Float
+    private float rotationSpeed = 50f;
+    //Float
+
     void Start()
     {
         deathTrigger = GameObject.Find("DeathTrigger");
         deathScript = deathTrigger.GetComponent<DeathTrigger>();
     }
+
+    void Update()
+    {
+        this.gameObject.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+    }
+
 
     public override void PlayerHit()
     {

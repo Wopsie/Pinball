@@ -4,7 +4,6 @@ using System.Collections;
 public class PickUp : MonoBehaviour
 {
 
-   
 
     public virtual void PlayerHit()
     {
@@ -16,6 +15,12 @@ public class PickUp : MonoBehaviour
         if (coll.gameObject.tag == "Ball")
         {
            Destroy(this.gameObject);
+            PlayerHit();
+        }
+
+        else if (coll.gameObject.tag == "MultiBall")
+        {
+            Destroy(this.gameObject);
             PlayerHit();
         }
     }

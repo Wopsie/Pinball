@@ -15,6 +15,11 @@ public class StopSpring : MonoBehaviour {
     {
         springObject = GameObject.Find("Spring");
         springScript = springObject.GetComponent<Spring>();
+
+        /*
+         * Grabs the GameObject that holds the 'Spring' script.
+         * Now that we have our external script in our hands, we can make changes in it in this script.
+         */
 	}
 	
     void OnTriggerEnter (Collider coll)
@@ -22,6 +27,12 @@ public class StopSpring : MonoBehaviour {
         if (coll.gameObject.tag == "Ball")
         {
             springScript.onSpring = false;
+            springScript.thrust = 0f;
+        }
+
+        if (coll.gameObject.tag == "MultiBall")
+        {
+            springScript.onMultiSpring = false;
             springScript.thrust = 0f;
         }
     }

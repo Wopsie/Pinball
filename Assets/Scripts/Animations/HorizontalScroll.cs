@@ -8,6 +8,7 @@ public class HorizontalScroll : MonoBehaviour {
     private float speed = 0.01f;
     //floats
 
+
  
     void Update()
     {
@@ -17,12 +18,7 @@ public class HorizontalScroll : MonoBehaviour {
 
     void ScrollBack()
     {
-    
             Vector2 offset = new Vector2(Time.time * speed,0);
-
-           
-
             GetComponent<Renderer>().material.mainTextureOffset = offset;
-
     }
 }

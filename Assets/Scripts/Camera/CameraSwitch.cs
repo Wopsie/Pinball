@@ -7,7 +7,15 @@ public class CameraSwitch : MonoBehaviour {
     //GameObjects
     private GameObject mainCamera;
     private GameObject followCamera;
+    private GameObject secretCameraOne;
+    private GameObject secretCameraTwo;
     //GameObjects
+
+    //Bool
+    private bool firstCameraSwitch;
+    private bool secretCamSwitchBool;
+    private bool secretCamSwitchBoolTwo;
+    //Bool
 
 
     void Awake()
@@ -15,19 +23,56 @@ public class CameraSwitch : MonoBehaviour {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         followCamera = GameObject.FindGameObjectWithTag("FollowCamera");
 
+        secretCameraOne = GameObject.FindGameObjectWithTag("SecretCameraOne");
+        secretCameraTwo = GameObject.FindGameObjectWithTag("SecretCameraTwo");
+
     }
 
-	void Start () {
+	void Start () 
+    {
         mainCamera.SetActive(false);
+        secretCameraOne.SetActive(false);
+        secretCameraTwo.SetActive(false);
+
+        if (this.gameObject.name == "Reset")
+        {
+            firstCameraSwitch = true;
+        }
+
+        if (this.gameObject.tag == "Track")
+        {
+            secretCamSwitchBool = true;
+        }
+
+        if (this.gameObject.name == "toTeleport")
+        {
+            secretCamSwitchBoolTwo = true;
+        }
 	}
 	
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.name == "Ball")
+        if (coll.gameObject.tag == "Ball")
         {
-            followCamera.SetActive(false);
-            mainCamera.SetActive(true);
+            if (firstCameraSwitch)
+            {
+                followCamera.SetActive(false);
+                mainCamera.SetActive(true);
+            }
+
+            if (secretCamSwitchBool)
+            {
+                mainCamera.SetActive(false);
+                secretCameraOne.SetActive(true);
+            }
+
+            if (secretCamSwitchBoolTwo)
+            {
+                secretCameraOne.SetActive(false);
+                secretCameraTwo.SetActive(true);
+            }
+            
         }
     }
 }

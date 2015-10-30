@@ -5,11 +5,12 @@ public class OpenDoor : MonoBehaviour {
 
 
     //Int
-    private int counterToOpenDoor = 3;
+    private int counterToOpenDoor;
     //Int
 
     //GameObjects
     private GameObject secretDoor;
+    private GameObject trackRun;
     private GameObject turnLogoRed;
     private GameObject pillarOne;
     private GameObject pillarTwo;
@@ -20,11 +21,15 @@ public class OpenDoor : MonoBehaviour {
 
 	void Start () 
     {
+        counterToOpenDoor = 3;
 
-      //  counterToOpenDoor = 3;
+        trackRun = GameObject.FindGameObjectWithTag("Track");
+        trackRun.SetActive(false);
 
         secretDoor = GameObject.FindGameObjectWithTag("SecretDoor");
+
         turnLogoRed = GameObject.Find("HalloweenLogo");
+
         pillarOne = GameObject.Find("OpenDoor1");
         pillarTwo = GameObject.Find("OpenDoor2");
         pillarThree = GameObject.Find("OpenDoor3");
@@ -33,27 +38,47 @@ public class OpenDoor : MonoBehaviour {
 
 	void Update () 
     {
-        Debug.Log(pillarOne.activeSelf);
-        Debug.Log(counterToOpenDoor);
         OpenTheDoor();
+        CheckIfActive();
 	}
 
     void CheckIfActive ()
     {
-        if (!pillarOne.activeInHierarchy)
+       if (pillarOne.activeSelf == false)
+       {
+           counterToOpenDoor = 2;
+       }
+
+       if (pillarTwo.activeSelf == false)
+       {
+           counterToOpenDoor = 1;
+       }
+
+       if (pillarThree.activeSelf == false)
+       {
+           counterToOpenDoor = 0;
+       }
+    }
+
+    void TurnOnPillars()
+    {
+        if (counterToOpenDoor == 3)
         {
-            counterToOpenDoor = 2;
+            pillarOne.SetActive(true);
+            pillarTwo.SetActive(true);
+            pillarThree.SetActive(true);
         }
     }
 
     void OpenTheDoor()
     {
-        if (counterToOpenDoor <= 2)
+        if (counterToOpenDoor <= 0)
         {
+            trackRun.SetActive(true);
             secretDoor.SetActive(false);
-           // this.gameObject.SetActive(true);
             turnLogoRed.GetComponent<Renderer>().material.color = Color.red;
-           // counterToOpenDoor = 3;
+            counterToOpenDoor = 3;
+            //TurnOnPillars();
         }
     }
 }

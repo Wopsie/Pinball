@@ -8,6 +8,7 @@ public class DeathTrigger : MonoBehaviour {
     //GameObjects
     [SerializeField]
     private GameObject ballObjectClone;
+    private GameObject multiBall;
     private GameObject spawnPos;
     //GameObjects
 
@@ -26,8 +27,13 @@ public class DeathTrigger : MonoBehaviour {
        
         if (deathCounter >= 3)
         {
-			Application.LoadLevel(1);
-            Debug.Log("DEAD");
+            multiBall = GameObject.FindGameObjectWithTag("MultiBall");
+
+            if (!multiBall.activeInHierarchy)
+            {
+                Application.LoadLevel(1);
+            }
+			
         }
     }
 
@@ -41,6 +47,12 @@ public class DeathTrigger : MonoBehaviour {
             if (deathCounter <= 2)
             StartCoroutine("WaitForSecondBall");
             
+        }
+
+        if (other.gameObject.tag == "MultiBall")
+        {
+            deathCounter++;
+            Destroy(other.gameObject);
         }
     }
 

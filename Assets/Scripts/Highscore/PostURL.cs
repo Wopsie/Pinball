@@ -1,39 +1,44 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
 
-public class PostURL : MonoBehaviour
-{
+public class PostURL : MonoBehaviour {
+
+    private string textW;
     [SerializeField]
-    private Text scoreBoardText;
-    public string url = "19176.hosts.ma-cloud.nl/bewijzenmap/jaar2/PRO/Pinball/";
-    private string _player = "";
-    private string _score = "";
-    private string urlString;
+    private Text scoreField;
+    private WWW www;
 
-    void OnGUI()
+
+
+	void Start () {
+
+       // wwwText = www.text;
+		string url = "http://localhost/bap/pro/action_page2.php";
+
+		www = new WWW(url);
+        StartCoroutine(WaitForRequest(www));
+
+	}
+
+    void ParseString(string incText)
     {
-        //creates textfield for playername and converts score int to string.
-        GUI.Label(new Rect(410, 480, 50, 25), "Name");
-        _player = GUI.TextField(new Rect(470, 480, 100, 25), _player);
-        _score = ScoreManager.score.ToString();
-
-        //save playername
-        if (GUI.Button(new Rect(580, 480, 80, 25), "Submit"))
-        {
-            StartCoroutine("SaveName");
-        }
+        incText = www.text;
+        incText.Trim().Split('\n');
     }
 
-    private IEnumerator SaveName()
-    {
-        string urlString = url + "?name=" + WWW.EscapeURL(_player) + "&score=" + WWW.EscapeURL(_score);
-        Debug.Log("Sending: " + urlString);
-        WWW postName = new WWW(urlString);
+	IEnumerator WaitForRequest (WWW www)
 
-        yield return postName;
+	{
+		yield return www;
 
-        Debug.Log(postName.text);
-        scoreBoardText.text = postName.text;
-    }
+		if(www.error == null) {
+			Debug.Log("WWW Ok!: " + www.text);
+		} else {
+			Debug.Log("WWW Error: "+ www.error);
+		}
+
+        scoreField.text = www.text;
+	}
+
 }
